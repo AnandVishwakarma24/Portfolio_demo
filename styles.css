@@ -7,6 +7,10 @@
     --glow-shadow: 0 0 10px var(--primary-color);
 }
 
+.nav-links a:active {
+    transform: scale(0.95);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -30,13 +34,21 @@ body {
     top: 0;
     width: 100%;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     border-bottom: 1px solid var(--primary-color);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(0,0,0,0.8);
+    box-shadow:
+        10px 10px 20px #111,
+        -10px -10px 20px #ddd;
+        opacity: 60%;
 }
+    
+
 
 .nav-brand {
     font-size: 1.5rem;
@@ -56,6 +68,10 @@ body {
     text-shadow: var(--glow-shadow);
 }
 
+.nav-links a:active {
+    transform: scale(0.95);
+}
+
 /* Sections */
 .section {
     min-height: 100vh;
@@ -64,11 +80,7 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    backdrop-filter: blur(30px);
-    border: 2px solid rgba(0,0,0,0.8);
-    box-shadow:
-        10px 10px 20px #111,
-        -10px -10px 20px #ddd;
+    
 }
 
 /* Matrix Background */
@@ -114,7 +126,7 @@ body {
 
 .terminal {
     background: #1a1a1a;
-    border-radius: 5px;
+    border-radius: 10px 40px;
     padding: 1rem;
     box-shadow: var(--glow-shadow);
 }
@@ -128,7 +140,7 @@ body {
 .dot {
     width: 12px;
     height: 12px;
-    border-radius: 50%;
+    border-radius: 10px 40px;
 }
 
 .red { background: #ff5f56; }
@@ -158,7 +170,7 @@ body {
 .skill-card {
     background: rgba(0, 0, 0, 0.7);
     padding: 2rem;
-    border-radius: 5px;
+    border-radius: 10px 40px;
     text-align: center;
     border: 1px solid var(--primary-color);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -185,7 +197,7 @@ body {
 
 .project-card {
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+    border-radius: 10px 40px;
     overflow: hidden;
     border: 1px solid var(--primary-color);
     transition: transform 0.3s;
@@ -219,7 +231,7 @@ body {
     background: var(--primary-color);
     color: var(--bg-color);
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 10px 40px;
     transition: all 0.3s;
 }
 
@@ -275,6 +287,12 @@ body {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+/* Navbar auto-hide */
+.navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Responsive Design */
